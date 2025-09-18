@@ -2,22 +2,36 @@
 <html lang="de">
 
 <head>
-    <title>weiter inputtypen</title>
+    <title> weiter inputtypen </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-<h2>HTML Formulare</h2>
+    <h2>HTML Formulare</h2>
     <form>
         <fieldset>
-            <legend>Pizzabelag</legend>
-            <input type="checkbox" name="schinken" value="salami"> salami<br>
-            <input type="checkbox" name="schinken" value="schinken"> schinken<br>
-            <input type="checkbox" name="schinken" value="pilze"> pilze<br>
-  
-        </fieldset> 
+            <input type="radio" name="geschlecht" value="maennlich"> maennlich<br>
+            <input type="radio" name="geschlecht" value="weiblich"> weiblich<br>
+            <input type="radio" name="geschlecht" value="ohne-angabe" checked> ohne angabe
+        </fieldset>
     </form>
+<h2>E-Mails</h2>
+    <form>
+<legend>Email</legend>
+        <input type="email" name="email">
+
+    </form>
+
+
+    <h2>Lieblingsfarbe</h2>
+    <form>
+        
+        <input type="color" name="color">
+
+    </form>
+
+
 </body>
 
 </html>
