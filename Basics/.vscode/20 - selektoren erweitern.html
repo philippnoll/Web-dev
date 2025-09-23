@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> Selektoren erweitern</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1, 
+        p {   /*hier mit gruppieren und stylen wir mehrere selektoren*/
+
+            font-family: 'Courier New', Courier, monospace;
+            color: blue;
+        }
+
+        div p { /*sagt das alle paragraphen die innerhalb eines divs sind werden gestyled*/
+
+            color: red;
+        }
+
+        div + p { /*hier werden die paragraphen gestyled die immer direkt nach einem div kommen, wenn z.B ein H1 dazwischen ist dann klappt es nicht*/
+
+            color: green;
+        }
+
+        div > p { /*alle paragraphen die div als parent haben und zwar direkt div -> p werden so gestyled*/
+
+            color: gold;
+        }
+
+        #rot{ /*beispiel für <span> kann als ID geber innerhalb von text dienen. Kann auch dafür dienen das man span als zwischen objekt bei der parent/child beziehung nutz*/
+
+            color: red
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Selektoren Gruppieren</h1>
+
+    <div>
+        <p>absatz1</p>
+
+    </div>
+    <p>absatz2</p>
+    <h2>Die <span id="rot">ist nicht</span> gestyled</h2>
+
+    <div>
+
+     <span>
+            <p>absatz3</p>
+        </span>
+    </div>
+</body>
+
+
+<!---->
+
