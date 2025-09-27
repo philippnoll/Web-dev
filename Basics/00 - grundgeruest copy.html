@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>UI5 Grundgeruest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script id="sap-ui-bootstrap"
+        src="https://ui5.sap.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-preload="async"
+        data-sap-ui-libs="sap.m,sap.ui.layout">
+    </script>
+</head>
+<body class="sapUiBody sapUiSizeCompact">
+    <div id="content"></div>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/m/App",
+                "sap/m/Page",
+                "sap/m/Bar",
+                "sap/m/Title",
+                "sap/m/Button",
+                "sap/m/Text",
+                "sap/m/Panel",
+                "sap/m/List",
+                "sap/m/StandardListItem",
+                "sap/ui/layout/form/SimpleForm",
+                "sap/m/Label",
+                "sap/m/Input",
+                "sap/m/DatePicker",
+                "sap/m/TextArea",
+                "sap/m/Toolbar",
+                "sap/m/ToolbarSpacer",
+                "sap/m/ObjectStatus",
+                "sap/m/MessageToast"
+            ], function (
+                App,
+                Page,
+                Bar,
+                Title,
+                Button,
+                Text,
+                Panel,
+                List,
+                StandardListItem,
+                SimpleForm,
+                Label,
+                Input,
+                DatePicker,
+                TextArea,
+                Toolbar,
+                ToolbarSpacer,
+                ObjectStatus,
+                MessageToast
+            ) {
+                var oApp = new App("app");
+
+                var oList = new List({ inset: true });
+                oList.addItem(new StandardListItem({
+                    title: "Komponenten pruefen",
+                    description: "Sorge dafuer, dass alle UI5 Module geladen werden.",
+                    icon: "sap-icon://task",
+                    info: "Neu",
+                    infoState: "Information"
+                }));
+                oList.addItem(new StandardListItem({
+                    title: "Layouts testen",
+                    description: "Responsive Verhalten auf Desktop und Mobile checken.",
+                    icon: "sap-icon://screen-split-two",
+                    info: "In Arbeit",
+                    infoState: "Warning"
+                }));
+                oList.addItem(new StandardListItem({
+                    title: "Feedback einholen",
+                    description: "Sammle Rueckmeldungen vom Team.",
+                    icon: "sap-icon://discussion-2",
+                    info: "Erledigt",
+                    infoState: "Success"
+                }));
+
+                var oForm = new SimpleForm({
+                    editable: true,
+                    title: "Neue Notiz",
+                    content: [
+                        new Label({ text: "Name" }),
+                        new Input({ placeholder: "Dein Name" }),
+                        new Label({ text: "Faellig am" }),
+                        new DatePicker({ placeholder: "Datum waehlen" }),
+                        new Label({ text: "Beschreibung" }),
+                        new TextArea({ rows: 4, placeholder: "Was soll erledigt werden?" })
+                    ]
+                });
+
+                var oPage = new Page({
+                    title: "UI5 Starter",
+                    customHeader: new Bar({
+                        contentLeft: [
+                            new Button({ icon: "sap-icon://nav-back", type: "Transparent" })
+                        ],
+                        contentMiddle: [
+                            new Title({ text: "UI5 Sandbox" })
+                        ],
+                        contentRight: [
+                            new Button({
+                                text: "Hilfe",
+                                type: "Transparent",
+                                press: function () {
+                                    MessageToast.show("Weitere Infos findest du in der UI5 Doku.");
+                                }
+                            })
+                        ]
+                    }),
+                    subHeader: new Toolbar({
+                        content: [
+                            new Text({ text: "Demoansicht zur UI5-Erkundung" }),
+                            new ToolbarSpacer(),
+                            new ObjectStatus({ text: "Status: OK", state: "Success" })
+                        ]
+                    }),
+                    content: [
+                        new Panel({
+                            headerText: "Willkommen",
+                            expandable: true,
+                            expanded: true,
+                            content: [
+                                new Text({
+                                    text: "Dies ist ein kleines UI5 Beispiel mit einigen grundlegenden Steuerelementen."
+                                })
+                            ]
+                        }),
+                        new Panel({
+                            headerText: "Offene Aufgaben",
+                            content: [oList]
+                        }),
+                        new Panel({
+                            headerText: "Notiz hinzufuegen",
+                            content: [
+                                oForm,
+                                new Button({
+                                    text: "Speichern",
+                                    type: "Emphasized",
+                                    icon: "sap-icon://save",
+                                    press: function () {
+                                        MessageToast.show("Notiz gespeichert.");
+                                    }
+                                })
+                            ]
+                        })
+                    ]
+                });
+
+                oApp.addPage(oPage);
+                oApp.placeAt("content");
+            });
+        });
+    </script>
+</body>
+</html>
