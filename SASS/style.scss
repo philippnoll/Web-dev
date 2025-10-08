@@ -1,0 +1,43 @@
+$company-color: #230230;
+$company-border: 15px;
+
+.box {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(to bottom, white, black);
+}
+
+
+h1 {
+
+
+    color: $company-color;
+    border-bottom: $company-border solid $company-color;
+
+    &:hover{
+
+        color: green;
+        border-bottom: $company-border solid green;
+    }
+
+ /*    &::after{
+
+        content: "--";
+    }
+
+    &::before{
+
+        content: "Hi";
+    } */
+}
+
+ul, ol {
+
+
+    list-style-type: none;
+
+    li {
+
+        color: $company-color;
+    }
+}

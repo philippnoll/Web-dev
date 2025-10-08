@@ -1,6 +1,6 @@
 h1 {
-  color: red;
-  border-bottom: 3px solid red;
+  color: rgb(255, 0, 0);
+  border-bottom: 3px solid rgb(255, 0, 0);
 }
 
 ul {
@@ -8,6 +8,5 @@ ul {
 }
 
 ul li {
-  color: red;
-}
-/*# sourceMappingURL=index.css.map */
+  color: rgb(255, 0, 0);
+}/*# sourceMappingURL=index.css.map */
