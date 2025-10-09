@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        button {
+            font-size: 20px;
+            margin: 20px;
+            padding: 10px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+
+        p {
+            color: darkblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="top">Anzahl an Klicks </h1>
+    <button type="button" id="zähler">Klick Zählen</button>
+    <button type="button" id="reset">Reset</button>
+
+   
+
+
+    <script>
+        let anzahl = 0;
+
+        document.getElementById("reset").onclick = function() { 
+
+            anzahl = 0;
+            document.getElementById("top").innerHTML = "Anzahl an Klicks " +anzahl;
+            alert("Zähler zurückgesetzt");
+        }
+
+
+        document.getElementById("zähler").onclick = function() {
+
+           
+            anzahl += 1;
+          
+       
+
+            document.getElementById("top").innerHTML = "Anzahl an Klicks " +anzahl;
+            
+            
+        };
+
+    </script>
+
+</body>
+
+</html>
