@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+h1 {
+    color: darkblue;  
+    margin-left: 20px;  
+    font-family: 'Courier New', Courier, monospace;
+    }
+
+    input {
+        font-size: 20px;
+        margin: 20px;
+        font-family: 'Courier New', Courier, monospace;
+       
+        padding: 10px;
+        border: 2px solid darkblue;
+        border-radius: 5px;
+    }   
+
+    button {
+            font-size: 20px;
+            margin: 20px;
+            padding: 10px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        p {
+            color: darkblue;
+            font-family: 'Courier New', Courier, monospace;
+        }   
+
+
+        div {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid darkblue;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Ausgehzeiten Check</h1>
+    <input type="number" id="age" placeholder="Alter eingeben"> <br>
+    <button type="button" id="Check">Checken!</button>
+
+    <div>
+
+        <p id="recommendation"></p>
+
+    </div>
+
+    <script>
+
+
+document.getElementById("Check").onclick = function() {
+let alter = document.getElementById("age").value;
+if (alter < 16) { 
+
+
+document.getElementById("recommendation").textContent = "Du darfst bis 20 Uhr draußen bleiben";
+}
+
+else if (alter < 18) {  
+document.getElementById("recommendation").textContent = "Du darfst bis 22 Uhr draußen bleiben";
+}
+
+else {
+document.getElementById("recommendation").textContent = "Du darfst so lange du willst draußen bleiben";
+
+}
+}
+
+
+    </script>
+
+</body>
+
+</html>
