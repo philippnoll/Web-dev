@@ -8,24 +8,23 @@
 
 
     <style>
+        h1 {
+            color: darkblue;
+            margin-left: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-h1 {
-    color: darkblue;  
-    margin-left: 20px;  
-    font-family: 'Courier New', Courier, monospace;
-    }
+        input {
+            font-size: 20px;
+            margin: 20px;
+            font-family: 'Courier New', Courier, monospace;
 
-    input {
-        font-size: 20px;
-        margin: 20px;
-        font-family: 'Courier New', Courier, monospace;
-       
-        padding: 10px;
-        border: 2px solid darkblue;
-        border-radius: 5px;
-    }   
+            padding: 10px;
+            border: 2px solid darkblue;
+            border-radius: 5px;
+        }
 
-    button {
+        button {
             font-size: 20px;
             margin: 20px;
             padding: 10px;
@@ -40,7 +39,8 @@ h1 {
         p {
             color: darkblue;
             font-family: 'Courier New', Courier, monospace;
-        }   
+            font-size: 20px;
+        }
 
 
         div {
@@ -50,7 +50,6 @@ h1 {
             border-radius: 5px;
             width: 300px;
         }
-
     </style>
 
 </head>
@@ -59,6 +58,7 @@ h1 {
 
     <h1>Ausgehzeiten Check</h1>
     <input type="number" id="age" placeholder="Alter eingeben"> <br>
+    <input type="text" id="name" placeholder="Name eingeben"> <br>
     <button type="button" id="Check">Checken!</button>
 
     <div>
@@ -70,24 +70,39 @@ h1 {
     <script>
 
 
-document.getElementById("Check").onclick = function() {
-let alter = document.getElementById("age").value;
-if (alter < 16) { 
+        document.getElementById("Check").onclick = function () {
+            let alter = document.getElementById("age").value;
+            let name = document.getElementById("name").value;
+
+            if (alter < 12) {
 
 
-document.getElementById("recommendation").textContent = "Du darfst bis 20 Uhr draußen bleiben";
-}
 
-else if (alter < 18) {  
-document.getElementById("recommendation").textContent = "Du darfst bis 22 Uhr draußen bleiben";
-}
+                text = "Du musst um 19 Uhr zuhause sein";
+            }
 
-else {
-document.getElementById("recommendation").textContent = "Du darfst so lange du willst draußen bleiben";
+            else if (alter < 16) {
 
-}
-}
+                text = "Du darfst bis 20 Uhr draußen bleiben";
+            }
 
+            else if (alter < 18) {
+                text = "Du musst um 22 Uhr zuhause sein";
+
+            }
+
+            else {
+                text = "Du darfst so lange du willst draußen bleiben";
+
+            }
+            
+            if(name == "Philipp"){
+                text = "Du darfst immer so lange du willst draußen bleiben";
+            }
+
+            document.getElementById("recommendation").textContent = text;
+        }
+        
 
     </script>
 
