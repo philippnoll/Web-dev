@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+ button {
+            font-size: 20px;
+            margin: 20px;
+            padding: 10px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Hi</h1>
+    <input type="number" id="eingabe" placeholder="Zahl eingeben"> <br>
+
+
+    
+
+    <button type="button" id="rechnen">Drücken zum rechnen</button>
+    <br>
+    <p id="output"></p>
+    <script>
+
+
+        function hochrechnen(zahl) {
+            return zahl * zahl * zahl;
+        }
+
+document.getElementById("rechnen").addEventListener("click", function() {
+    
+        var hochdreizahl = hochrechnen(document.getElementById("eingabe").value);
+        document.getElementById("output").textContent = hochdreizahl;
+});
+</script>
+</body>
+
+</html>
