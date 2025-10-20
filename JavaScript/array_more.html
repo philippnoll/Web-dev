@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+
+</style>
+
+</head>
+
+<body>
+
+    <p id="list"></p>
+    <script>
+        const liste = [1, 2, 3, 4];
+        const freunde = ["Max", "Moritz", "Hans"];
+        const iphone = ["iphone 12", "iphone 13", "iphone 14"];
+
+        console.log(liste);
+
+        let herausgegliedertesElement = liste.pop();
+        console.log(herausgegliedertesElement);
+        console.log(liste);
+        console.log(liste.pop());
+        console.log(liste);
+        liste.push(6);
+        console.log(liste);
+        liste.push(7);
+        console.log(liste);
+        let shiftraus = liste.shift();
+        console.log(shiftraus);
+        console.log(liste);
+        liste.unshift(0, 3, 5, 11);
+        console.log(liste);
+        liste.splice(1, 0, 9, 8);
+        console.log(liste);
+        liste.sort((a, b) => a - b);
+        console.log(liste);
+        liste.reverse();
+        console.log(liste);
+        // console.log(liste.toString());
+        console.log(liste.join(" - "));
+    </script>
+
+
+
+</body>
+
+</html>

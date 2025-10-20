@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Return Statement in Javascript</title>
+
+</head>
+
+<body>
+
+
+    <input type="text" placeholder="dein name" id="name" />
+    <button type="button" id="button">Begrüßen</button>
+    <p id="begrueßen"></p>
+
+
+    <script>
+
+        document.getElementById("button").addEventListener("click", function () {
+            document.getElementById("begrueßen").innerText = begruessen(document.getElementById("name").value);
+        });
+
+        function begruessen(name) {
+            return "Hallo " + name + ", willkommen auf meiner Webseite!";
+        }
+
+    </script>
+</body>
+
+</html>
