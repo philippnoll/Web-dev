@@ -1,0 +1,48 @@
+<!Doctype html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematische Operatoren</title>
+
+</head>
+
+<body>
+
+<script>
+
+var ergebnis;
+ergebnis = 5+3;
+console.log("Addition mit + 3-5: " +ergebnis);
+
+ergebnis = 3-5
+
+console.log("Subtraktion mit - 3-5: " +ergebnis);
+
+ergebnis = 3*5
+
+console.log("Multiplikation mit * 3*5: " +ergebnis);
+
+ergebnis = 3/5
+
+console.log("Division mit / 3/5: " +ergebnis);
+
+ergebnis = 3%5
+
+console.log("Modulus mit % 3%5: " +ergebnis);
+
+ergebnis = ++ergebnis; //++ vorher sagt inkrementiere erst dann zuweisen ++ danach sagt zuweisen erst dann inkrementiere. das gilt auch für -- und das gleiche gilt auch wenn nicht zugewiesen wird also nur ++ergebnis; oder ergebnis++;
+
+console.log("Inkrementieren: " +ergebnis);
+
+
+console.log("Additionszuweisung mit += : " + (ergebnis += 5)); //ergebnis = ergebnis + 5; es wird erhöht bevor es ausgegeben wird
+console.log("Subtraktionszuweisung mit -= : " + (ergebnis -= 5)); //ergebnis = ergebnis - 5; es wird erhöht bevor es ausgegeben wird
+console.log("Multiplikationszuweisung mit *= : " + (ergebnis *= 5)); //ergebnis = ergebnis * 5; es wird erhöht bevor es ausgegeben wird
+console.log("Divisionszuweisung mit /= : " + (ergebnis /= 5));
+
+    </script>
+</body>
+
+</html>

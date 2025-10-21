@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+   <p id="name"></p>
+<script>    
+
+"use strict";
+let counter = 10;
+
+do{
+
+//der code hier drin wird mindestens einmal ausgeführt egal ob die bedingung wahr oder falsch ist, selbst bei unmöglichen bedingungen wie counter < 0 wird der code einmal ausgeführt.
+
+counter--;
+
+console.log("Der aktuelle Wert des Counters ist: " + counter);
+// document.write("Der aktuelle Wert des Counters ist: " + counter + "<br>");
+document.getElementById("name").textContent = "Der aktuelle Wert des Counters ist: " + counter;
+
+} while(counter > 0);
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
