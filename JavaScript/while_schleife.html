@@ -23,8 +23,9 @@
 
 
 let counter = parseInt(prompt("Wie viele Zahlen willst du eingeben?"));
+const merken = counter;
 
-let menge
+let menge = 0;
 
         while (counter > 0) {
 
@@ -38,8 +39,12 @@ menge += parseInt(zahl);
             
         }
 
+
+let ergebnis = menge / parseInt(merken);
+document.write("Der Durchschnitt der eingegebenen Zahlen ist: " + ergebnis + "<br>");
 document.write("Die Summe der eingegebenen Zahlen ist: " + menge + "<br>");
-document.write("Der durschnitel der eingegebenen Zahlen ist: " + (menge / (counter + 1)) + "<br>");
+
+//document.write("Der durschnitel der eingegebenen Zahlen ist: " + ergebnis + "<br>");
 
 
     </script>
