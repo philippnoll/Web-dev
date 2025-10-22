@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+
+        let input = "";
+        let anzahlrunden = 0;
+        let gesamtMenge = 0;
+        let inputInt = 0;
+        let ergebnis = 0;
+
+
+
+
+
+        while (input != "0") {
+
+            input = (prompt("Gib eine Zahl ein (oder 0 zum Beenden):"));
+            inputInt = parseInt(input);
+
+            if (isNaN(inputInt)) {
+                
+                document.write("Das letzte war keine Zahl!<br>");
+                break;
+            }
+            else if (inputInt != 0) {
+                gesamtMenge += inputInt;
+                anzahlrunden++;
+            }
+
+        }
+
+        ergebnis = gesamtMenge / anzahlrunden; // -1, weil die 0 nicht mitgezählt werden soll
+        document.write("Der Durchschnitt der Zahlen war: " + ergebnis + "<br>");
+        document.write("Die Summe der Zahlen war: " + gesamtMenge + "<br>");
+
+    </script>
+
+
+</body>
+
+</html>
