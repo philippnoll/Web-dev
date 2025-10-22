@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        #header {
+            text-align: center;
+            background-color: lightblue;
+            padding: 20px;
+            width: 50%;
+            font-family: 'sans-serif';
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+
+        #Container {
+            text-align: center;
+            margin-top: 50px;
+            font-family: sans-serif
+        }
+
+
+
+
+        #buttonContainer {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+
+            width: 200px;
+            padding: 10px;
+            font-family: sans-serif;
+
+            text-align: center;
+
+
+        }
+
+
+        #button {
+
+
+            background-color: rgb(79, 146, 204);
+            width: 200px;
+            height: 50px;
+            border: none;
+            font-size: 16px;
+            display: inline-block;
+
+        }
+
+        button:hover {
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div id="header">
+        <h1>Bekannte Zitate</h1>
+
+    </div>
+
+    <div id="buttonContainer">
+        <button id="button">Neues Zitat generieren</button>
+
+    </div>
+
+
+    <div id="Container">
+
+        <p id="Zitat">Test</p>
+
+        <p id="urheber">Test</p>
+
+    </div>
+
+    <script>
+
+        const zitate = ["Vergiss die Fehler. Behalte die Lektionen.", "Cool zu sein bedeutet, das eigene Selbst zu sein, nicht etwas zu tun, was jemand anderes dir sagt.",
+            "Gedanken werden zu den Erfahrungen, die man lebt.", "Wenn du immer versuchst, normal zu sein, wirst du nie wissen, wie erstaunlich du sein kannst."];
+
+        const urheber = ["- Dalai Lama", "- Vanessa Hudgens", "- Iyanla Vanzant", "- Maya Angelou"];
+        let randomIndex = 0;
+
+        let range = zitate.length;
+
+        document.getElementById("button").addEventListener("click", function () {
+
+
+            randomIndex = Math.floor(Math.random() * range);
+
+            document.getElementById("Zitat").textContent = zitate[randomIndex]
+            document.getElementById("urheber").textContent = urheber[randomIndex]
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

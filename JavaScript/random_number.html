@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> Random Number  </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+<h1 id="top">Hier wird gleich eine Zahl generiert:</h1>
+
+<p id="zufallszahl"></p>
+<button id="generator">Klick mich</button>
+<script>
+
+
+let red = 0;
+let blue = 0;
+let green = 0;
+
+document.getElementById("generator").addEventListener("click", function() {
+
+red = Math.floor(Math.random() * 255) + 1;
+blue = Math.floor(Math.random() * 255) + 1;
+green = Math.floor(Math.random() * 255) + 1;
+
+
+document.getElementById("top").style.backgroundColor = "rgb("+red+", "+green+", "+blue+")";
+
+
+
+
+console.log("Der Button wurde geklickt!");
+
+
+
+} );
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
