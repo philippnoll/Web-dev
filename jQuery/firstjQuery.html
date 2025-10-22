@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+    <style>
+#viereck {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin-top: 20px;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <p id="text">Endlich mal jQuery lernen!</p>
+    <div id="viereck"></div>
+
+<script>
+
+$("#viereck").click(function() {
+    $("#text").text("jQuery macht Spaß!");
+    $("#viereck").css("background-color", "lightgreen");
+});
+    
+
+
+</script>
+  
+</body> jquery
+
+</html>
