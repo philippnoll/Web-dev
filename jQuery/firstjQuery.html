@@ -5,36 +5,81 @@
     <title> </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
 
     <style>
-#viereck {
-    width: 100px;
-    height: 100px;
-    background-color: lightblue;
-    margin-top: 20px;
-}
-
+        #viereck {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
     </style>
 
 </head>
 
 <body>
     <p id="text">Endlich mal jQuery lernen!</p>
+
+    <button id="toggle">An<an>
+            <aus></aus></button>
     <div id="viereck"></div>
 
-<script>
+    <script>
 
-$("#viereck").click(function() {
-    $("#text").text("jQuery macht Spaß!");
-    $("#viereck").css("background-color", "lightgreen");
-});
-    
+        // $("#viereck").click(function() {
+        //  alert($("#text").text());
+        // });
+
+        // $("#text").click(function () {
+
+        //     $("#text").text("Du hast den text angeklickt");
 
 
-</script>
-  
-</body> jquery
+        // })
+
+        let schalter = true;
+
+        $("#toggle").click(function () {
+
+            if (schalter) {
+                $("#viereck").fadeIn(2000);
+                $("#toggle").text("Aus");
+                schalter = false;
+
+            }
+
+            else {
+
+                $("#viereck").fadeOut(2000);
+                $("#toggle").text("An");
+                schalter = true;
+
+            }
+
+        }
+
+
+        )
+
+
+
+
+
+
+
+        // $("#viereck").hover(function (){
+
+
+        // $("#viereck").css("background-color", "red");
+
+        // })
+
+
+
+    </script>
+
+</body>
 
 </html>
