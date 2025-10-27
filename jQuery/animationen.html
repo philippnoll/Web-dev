@@ -14,35 +14,59 @@
             background-color: lightblue;
             margin-top: 20px;
         }
+
+        .red-bg {
+            background-color: red !important;
+        }
     </style>
 
 </head>
 
 <body>
-
+    <button id="toggle">An</button>
     <div id="viereck"></div>
 
 
     <script>
 
-        $("#viereck").click(function () {
 
+        let schalter = true;
 
-            $("#viereck").animate({ width: "400px" }, 1000, function () {
-
-
-                $("#viereck").css("background-color", "red");
-                $("#viereck").animate({ width: "100px" }, 1000);
-            })
-
-
-
+        $("#toggle").click(function () {
+            if (schalter) {
+                $("#toggle").text("AN");
+                schalter = false;
+            } else {
+                $("#toggle").text("AUS");
+                schalter = true;
+                animationStarten();
+            }
         })
 
+        function animationStarten() {
+            if (!schalter) return;
 
+            $("#viereck").animate( //animate kann nicht in einer while schleife verwendet werden, da es asyncron 
+            // läuft. Heißt es wird gestartet und es wir nicht gewartet bis es fertig ist, das führt dazu das die 
+            // while schleife zig mal die animation startet was den brwoser crashen lässt. Wenn man es per function callbacks macht passiert das nicht, 
+            // am ende rekursiv rufen der eigenen funktion bis der schalter auf false ist als abbruch bedingung mit "return"
+                { width: "400px", height: "400px", marginLeft: "50px", marginTop: "50px", borderRadius: "50%" },
+                1000,
+                function () {
+                    $("#viereck").css("background-color", "red");
+                    $("#viereck").animate(
+                        { width: "100px", height: "100px", marginLeft: "0px", marginTop: "20px", borderRadius: "0%" },
+                        1000,
+                        function () {
+                            if (schalter) {
+                                animationStarten();
+                            }
+                        }
+                    );
+                }
+            );
+        }
     </script>
-
-
 
 </body>
 

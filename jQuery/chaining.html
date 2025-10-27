@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <style>
+        #main {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main"></div>
+
+
+    <script>
+
+        $("#main").animate({ width: "400px" }, 1000, function () {
+
+
+            $(this).css("background-color", "red");
+
+
+
+
+        }).fadeOut(2000, function () { //startet gedanklich direkt hinter dem aninmate mit .fadeOut
+
+
+            alert("End of Chaining");
+
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <style>
+    #main {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button id="button1">Dom ändern</button>
+
+
+  <div id="div1">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit harum quo blanditiis aperiam quisquam atque
+      recusandae perferendis quaerat fugiat! Repudiandae iusto recusandae repellendus, aspernatur fuga ipsa hic
+      explicabo numquam deserunt.</p>
+    <p>Alter text</p>
+    <p id="rep">Reproduziert Text</p>
+
+  </div>
+
+  <div id="div2">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit harum quo blanditiis aperiam quisquam atque
+      recusandae perferendis quaerat fugiat! Repudiandae iusto recusandae repellendus, aspernatur fuga ipsa hic
+      explicabo numquam deserunt.</p>
+    <p>Alter text</p>
+    
+
+  </div>
+
+
+
+  <script>
+
+
+
+
+    $(function () {
+      $("#button1").click(function () {
+
+        $("#div1").prepend("<p> neuer prepend Text </p>");
+        $("#div1").append("<p> neuer append Text </p>");
+        $("#rep").text("Ich bin der neue appendTo");
+        $("#rep").appendTo("#div2");
+        $("#rep").before("<h2> vor dem AppendTo Überschrift </h2>");
+
+
+
+      })
+
+    });
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
