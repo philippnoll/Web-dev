@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <style>
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1 id="header">Guck was hier stehen kann</h1>
+
+  <form>
+    <input type="text" name="name" id="name" placeholder="dein Name"> <br>
+    <input type="submit" name="submit" id="submit" value="submit">
+
+  </form>
+
+
+  <script>
+
+    $("#submit").click(function (e) //=>\\ 
+    {
+
+      e.preventDefault();
+
+      alert(this);
+
+      $("#header").text(` joojoj was geht ${$("#name").val()}  `); // mega gut mit val() und den Template Literals die man mit `  ` macht macht
+
+      console.log(this);
+    })
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>
