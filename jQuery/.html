@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <ul id="list">
+
+
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+
+
+    </ul>
+
+
+    <script>
+
+        $("ul#list li:first").css("color", "red");
+        $("ul#list li:even").css("background-color", "lightgrey");
+        $("ul#list li:odd").css("background-color", "lightblue");
+        $("ul#list li:odd").hover(function(){
+
+$("#list").hide();
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
