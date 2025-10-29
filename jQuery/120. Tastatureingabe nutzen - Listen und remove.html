@@ -2,44 +2,56 @@
 <html lang="de">
 
 <head>
-    <title> </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <title> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 
-    <style>
+  <style>
 
 
-    </style>
+  </style>
 
 </head>
 
 <body>
-    <input type="text" id="newItem">
+  <input type="text" id="newItem">
 
-    <ul id="list">
-
-
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
+  <ul id="list">
 
 
-    </ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
 
 
-    <script>
-
-  $("#newItem").keyup(function(e){
-
-let code = e.which;
+  </ul>
 
 
-  })
+  <script>
+
+    $("#newItem").on("keyup.myApp", function (event) {
+
+      let code = event.which;
+      console.log(code);
+
+      if (code == 13) {
 
 
-    </script>
+        $("ul#list").append(`<li> ${event.target.value} </li>`)
+        $("#newItem").val("");
+      }
+
+
+    })
+
+$("#list").on("click", "li", function () {
+    console.log(this);
+    $(this).remove();
+});
+
+  </script>
 
 </body>
 
