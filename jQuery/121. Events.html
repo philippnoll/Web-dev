@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <style>
+
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <div>
+
+    <form>
+      <label for="name">Name</label> <br>
+
+      <input type="text" id="name">
+      <input type="text" id="newItem">
+      <input type="submit" value="Abschicken">
+
+
+
+
+
+
+    </form>
+<div id="div1">Inhalt</div>
+
+
+
+  </div>
+<script>
+
+$("#div1").on("click", function(event){
+
+  event.currentTarget.textContent = "Wurde geklickt";
+
+
+})
+
+
+$("#div1").on("mousemove", function(event){
+
+  event.currentTarget.textContent = "WDu hast dich bewegt";
+
+})
+
+
+$("input").on("focus", function(event){
+
+  $(this).css("background-color", "lightgrey");
+
+
+
+})
+
+$("input").on("focusout", function(event){
+
+  $(this).css("background-color", "white");
+
+
+
+})
+
+
+</script>
+
+
+</body>
+
+</html>
