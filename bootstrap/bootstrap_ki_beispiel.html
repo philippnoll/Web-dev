@@ -1,0 +1,140 @@
+<!-- ...existing code... -->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title>Bootstrap Grundgerüst</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 1. Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- 2. jQuery (optional für Bootstrap 5, aber gut für dich) -->
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- 3. Bootstrap JS Bundle (inkl. Popper) mit defer -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <style>
+    /* Dein eigenes CSS */
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 1. Navbar (Navigationsleiste) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mein Projekt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Container (Zentriert den Inhalt) -->
+  <div class="container">
+
+    <!-- Hero Section (Großer Begrüßungsbereich) -->
+    <div class="bg-light p-5 rounded mb-4 shadow-sm">
+      <h1 class="display-4">Hallo Bootstrap 5!</h1>
+      <p class="lead">Das ist ein einfaches Beispiel mit Grid, Cards und einem Modal.</p>
+      <hr class="my-4">
+      <p>Klick auf den Button, um das Modal zu öffnen (ohne JS Code zu schreiben!).</p>
+      <!-- Button, der das Modal auslöst -->
+      <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Modal öffnen 🚀
+      </button>
+    </div>
+
+    <!-- 3. Grid System (Zeilen und Spalten) -->
+    <div class="row">
+      
+      <!-- Spalte 1 -->
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-header bg-success text-white">Feature A</div>
+          <div class="card-body">
+            <h5 class="card-title">Responsive</h5>
+            <p class="card-text">Bootstrap passt sich automatisch an Handy, Tablet und Desktop an.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spalte 2 -->
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-header bg-warning">Feature B</div>
+          <div class="card-body">
+            <h5 class="card-title">Components</h5>
+            <p class="card-text">Fertige Bausteine wie diese Cards sparen extrem viel Zeit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spalte 3 -->
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-header bg-danger text-white">Feature C</div>
+          <div class="card-body">
+            <h5 class="card-title">jQuery Power</h5>
+            <p class="card-text">Du kannst Bootstrap Elemente auch easy mit jQuery steuern.</p>
+            <button id="jqueryBtn" class="btn btn-outline-danger btn-sm mt-2">Klick mich (jQuery)</button>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Ende .row -->
+
+  </div> <!-- Ende .container -->
+
+  <!-- 4. Das Modal (Popup) - Standardmäßig unsichtbar -->
+  <div class="modal fade" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Erfolg!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Das ist ein Bootstrap Modal. Es funktioniert über die data-bs-Attribute im Button oben.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary">Speichern</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Warte bis das Dokument bereit ist
+    $(function() {
+        
+        console.log("jQuery ist bereit und geladen!"); // Check in der Konsole (F12)
+
+        $("#jqueryBtn").click(function(e) {
+            // e.preventDefault() verhindert, dass der Button z.B. ein Formular sendet (falls er mal in einem ist)
+            e.preventDefault(); 
+            
+            console.log("Button wurde geklickt!"); // Besser als Debugger Breakpoints hier
+            
+            alert("jQuery und Bootstrap funktionieren zusammen!");
+            $(this).toggleClass("btn-outline-danger btn-danger"); 
+        });
+
+    });
+  </script>
+
+</body>
+<!-- ...existing code... -->

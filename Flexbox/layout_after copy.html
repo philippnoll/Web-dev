@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .navigation {
+
+
+
+      display: flex;
+
+      justify-content: space-evenly;
+      /*space evenly sieht nicht schlecht aus*/
+      /*setzt alle elemente an die stelle die man angibt es gibt noch flex-end oder flex-start oder center oder kann auch den platz dazwischen angeben mit spacebetween das alle gleich groß sind*/
+      align-items: baseline;
+      /* setzt halt die item innerhalb der box flex-end alles unten, flex-start alles oben, center alles mitte, strecht ist basis wert, baseline setzt alle auf die selbe höhe basierend auf der schriftgröße des größten elements*/
+      flex-direction: column; /*setzt die direction der flex items*/
+
+
+
+
+
+
+      border: black solid 1px;
+      background-color: white;
+      height: 120px;
+      padding-left: 0px;
+    }
+
+    .navigation li {
+
+      list-style-type: none;
+      /* macht die punkte bei den listen weg */
+      flex: 0 0 auto;
+      /*  setzt alle elemente auf die exakte größe die sie haben */
+      background-color: lightgray;
+    }
+
+
+    .navigation li:nth-child(1) {
+
+
+  align-self: center;  }
+
+
+
+   /*Allows the default alignment along the cross axis to be overridden for individual flex items.
+  
+    */
+
+  </style>
+
+</head>
+
+<body>
+
+  <ul class="navigation">
+
+    <li> <a href="#">Home</a></li>
+    <li> <a href="#">Team</a></li>
+    <li> <a href="#">Anreise</a></li>
+    <li> <a href="#">Kontakt</a></li>
+
+
+
+  </ul>
+
+
+
+</body>
+
+</html>
